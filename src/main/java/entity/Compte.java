@@ -6,7 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "compte")
 public class Compte{
     @Id
@@ -23,8 +23,8 @@ public class Compte{
 
     @ManyToMany
     @JoinTable(name = "compte_clients",
-            joinColumns = @JoinColumn(name = "compte_id"),
-            inverseJoinColumns = @JoinColumn(name = "clients_id"))
+            joinColumns = @JoinColumn(name = "clients_id"),
+            inverseJoinColumns = @JoinColumn(name = "compte_id"))
     private Set<Client> clients = new LinkedHashSet<>();
 
     public Set<Client> getClients() {

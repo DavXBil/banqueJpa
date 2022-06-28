@@ -45,13 +45,14 @@ public class ConnexionJPA {
         client.setBanque(banque);
 
         Client client2 = new Client();
-        client.setNom("Doe");
-        client.setPrenom("Jane");
-        client.setDateNaissance(LocalDateTime.now());
-        client.setAdresse(adresse2);
-        client.setBanque(banque);
+        client2.setNom("Doe");
+        client2.setPrenom("Jane");
+        client2.setDateNaissance(LocalDateTime.now());
+        client2.setAdresse(adresse2);
+        client2.setBanque(banque);
 
         clients.add(client);
+        clients.add(client2);
 
         Compte compte1 = new Compte();
         compte1.setSolde(500);
@@ -87,14 +88,10 @@ public class ConnexionJPA {
         comptesClient.add(compte3);
         client.setComptes(comptesClient);
 
-        Set<Compte> comptesClient2 = new HashSet<>();
-        comptesClient2.add(compte1);
-        comptesClient2.add(compte2);
-        comptesClient2.add(compte);
-        client2.setComptes(comptesClient2);
+        client2.setComptes(comptesClient);
 
         em.persist(client);
-        //em.persist(client2);
+        em.persist(client2);
         em.persist(banque);
         em.persist(compte1);
         em.persist(compte2);

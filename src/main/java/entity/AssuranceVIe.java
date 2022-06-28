@@ -39,5 +39,12 @@ public class AssuranceVIe extends Compte{
         this.dateFin = dateFin;
     }
 
-
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AssuranceVIe{");
+        sb.append("taux=").append(taux);
+        sb.append(", dateFin=").append(dateFin);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -26,8 +26,8 @@ public class Client {
 
     @ManyToMany
     @JoinTable(name = "compte_clients",
-            joinColumns = @JoinColumn(name = "compte_ID"),
-            inverseJoinColumns = @JoinColumn(name = "clients_ID"))
+            joinColumns = @JoinColumn(name = "clients_id"),
+            inverseJoinColumns = @JoinColumn(name = "compte_ID"))
     private Set<Compte> comptes = new LinkedHashSet<>();
 
 
